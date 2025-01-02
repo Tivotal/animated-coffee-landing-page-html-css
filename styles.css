@@ -1,0 +1,197 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  width: 75px;
+}
+
+.navbar .logo img {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.menu li {
+  position: relative;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #999;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu li:hover a {
+  color: #fff;
+}
+
+.menu li::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #853030;
+  bottom: -5px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu li:hover:before {
+  width: 100%;
+}
+
+.btn {
+  padding: 15px 40px;
+  background: #853030;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #762a2a;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 6%;
+  padding-top: 80px;
+}
+
+.home-img {
+  max-width: 600px;
+}
+
+.home-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-txt h1 {
+  font-size: 70px;
+  color: #fff;
+}
+
+.home-txt h1 span {
+  color: #853030;
+}
+
+.home-txt p {
+  max-width: 700px;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.home-txt .btn:hover {
+  box-shadow: 0 0 20px #853030;
+}
+
+.menu li,
+.home-txt .btn {
+  transform: translateY(90px);
+  opacity: 0;
+  animation: scrollTop 0.5s forwards;
+  animation-delay: calc(0.15s * var(--i));
+}
+
+.home-txt .btn {
+  animation-delay: 0.8s;
+}
+
+@keyframes scrollTop {
+  0% {
+    transform: translateY(90px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.home-txt h1 {
+  transform: translateX(-90px);
+  opacity: 0;
+  animation: scrollRight 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-90px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.home-txt p,
+.home-img {
+  transform: translateX(90px);
+  opacity: 0;
+  animation: scrollLeft 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.home-img {
+  animation-delay: 0;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(90px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
